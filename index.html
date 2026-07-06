@@ -65,12 +65,6 @@
     background: var(--paper);
     border-bottom: 1px solid var(--line);
   }
-  header::before{
-    content:"";
-    display:block;
-    height: 4px;
-    background: linear-gradient(90deg, var(--rust), var(--ochre) 50%, var(--sage));
-  }
   .nav{
     max-width: var(--max);
     margin: 0 auto;
@@ -95,12 +89,7 @@
   .nav a.cta:hover{ background: var(--rust); border-color: var(--rust); color: var(--paper); }
 
   /* ---------- hero ---------- */
-  .hero{
-    padding: 68px 0 40px;
-    background:
-      radial-gradient(560px 300px at 85% 0%, rgba(255,90,95,0.07), transparent 70%),
-      radial-gradient(460px 260px at 0% 100%, rgba(0,166,153,0.06), transparent 70%);
-  }
+  .hero{ padding: 68px 0 40px; }
   .eyebrow{
     font-family: 'IBM Plex Mono', monospace;
     font-size: 0.75rem;
