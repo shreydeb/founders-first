@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founders First — Support for Social Impact Founders</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --ink: #484848;
+    --paper: #ffffff;
+    --paper-dim: #FFF7F5;
+    --charcoal: #767676;
+    --rust: #FF5A5F;
+    --ochre: #FC642D;
+    --sage: #00A699;
+    --line: rgba(72,72,72,0.14);
+    --line-strong: rgba(72,72,72,0.26);
+    --max: 760px;
+  }
+
+  *{ box-sizing: border-box; }
+
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin:0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 17px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection{ background: var(--ochre); color: var(--paper); }
+
+  a { color: inherit; }
+
+  .wrap{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 0 28px;
+  }
+
+  /* ---------- texture ---------- */
+  body::before{
+    content:"";
+    position: fixed;
+    inset:0;
+    pointer-events:none;
+    z-index: 5;
+    opacity: 0.015;
+    background-image:
+      radial-gradient(circle at 20% 30%, #000 0.6px, transparent 0.6px),
+      radial-gradient(circle at 60% 70%, #000 0.6px, transparent 0.6px);
+    background-size: 3px 3px, 4px 4px;
+  }
+
+  /* ---------- nav ---------- */
+  header{
+    position: sticky; top:0; z-index: 20;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+  header::before{
+    content:"";
+    display:block;
+    height: 4px;
+    background: linear-gradient(90deg, var(--rust), var(--ochre) 50%, var(--sage));
+  }
+  .nav{
+    max-width: var(--max);
+    margin: 0 auto;
+    padding: 18px 28px;
+    display:flex; align-items:center; justify-content:space-between;
+  }
+  .wordmark{
+    font-family: 'Fraunces', serif;
+    font-weight: 600;
+    font-size: 1.05rem;
+    letter-spacing: 0.01em;
+  }
+  .nav a.cta{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.78rem;
+    text-decoration: none;
+    border: 1px solid var(--line-strong);
+    padding: 7px 14px;
+    border-radius: 2px;
+    transition: background .25s, color .25s;
+  }
+  .nav a.cta:hover{ background: var(--rust); border-color: var(--rust); color: var(--paper); }
+
+  /* ---------- hero ---------- */
+  .hero{
+    padding: 68px 0 40px;
+    background:
+      radial-gradient(560px 300px at 85% 0%, rgba(255,90,95,0.07), transparent 70%),
+      radial-gradient(460px 260px at 0% 100%, rgba(0,166,153,0.06), transparent 70%);
+  }
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--rust);
+    margin-bottom: 20px;
+  }
+  h1{
+    font-family: 'Fraunces', serif;
+    font-weight: 450;
+    font-size: clamp(1.85rem, 4.2vw, 2.6rem);
+    line-height: 1.15;
+    margin: 0 0 20px;
+    letter-spacing: -0.01em;
+  }
+  h1 em{ font-style: italic; font-weight: 450; }
+
+  .lede{
+    font-size: 1.18rem;
+    max-width: 58ch;
+    color: var(--charcoal);
+  }
+  .lede b{ font-weight: 500; color: var(--ink); }
+
+  /* ---------- not-this section (signature) ---------- */
+  .not-this{
+    padding: 54px 0 60px;
+    border-top: 1px solid var(--line);
+    border-bottom: 1px solid var(--line);
+    background: var(--paper-dim);
+  }
+  .not-this .label{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.75rem;
+    color: var(--rust);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    margin-bottom: 18px;
+  }
+  .not-this p{
+    font-family: 'Fraunces', serif;
+    font-size: clamp(1.3rem, 3.2vw, 1.7rem);
+    font-weight: 450;
+    line-height: 1.4;
+    margin: 0 0 14px;
+  }
+  .not-this .plain{
+    font-family: 'IBM Plex Sans', sans-serif;
+    font-size: 1.05rem;
+    font-weight: 400;
+    color: var(--charcoal);
+    max-width: 56ch;
+    margin-top: 22px;
+  }
+
+  /* ---------- section rhythm ---------- */
+  section{ padding: 64px 0; }
+  section.tight{ padding-top: 8px; }
+
+  h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 450;
+    font-size: clamp(1.6rem, 3.5vw, 2.05rem);
+    margin: 0 0 8px;
+  }
+  .section-intro{
+    color: var(--charcoal);
+    max-width: 56ch;
+    margin: 0 0 40px;
+  }
+
+  /* offer grid */
+  .offer-list{
+    display: grid;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .offer{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    padding: 28px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .offer h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  .offer p{
+    margin: 0;
+    color: var(--charcoal);
+    max-width: 58ch;
+  }
+
+  /* who this is for */
+  .for-list{
+    list-style: none;
+    padding: 0; margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 12px;
+  }
+  .for-list li{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    border: 1px solid var(--line-strong);
+    padding: 8px 14px;
+    border-radius: 20px;
+    color: var(--charcoal);
+  }
+
+  /* philosophy */
+  .philosophy{
+    background: linear-gradient(135deg, #FFECEB, #FFF0E4);
+    color: var(--ink);
+  }
+  .philosophy h2{ color: var(--ink); }
+  .philosophy .section-intro{ color: var(--charcoal); }
+  .philosophy ul{ list-style: none; padding:0; margin: 28px 0 0; }
+  .philosophy li{
+    position: relative;
+    padding: 14px 0 14px 28px;
+    border-top: 1px solid rgba(255,90,95,0.28);
+    font-family: 'Fraunces', serif;
+    font-size: 1.08rem;
+    font-weight: 450;
+  }
+  .philosophy li:last-child{ border-bottom: 1px solid rgba(255,90,95,0.28); }
+  .philosophy li::before{
+    content:"—";
+    position:absolute; left:0; top:14px;
+    color: var(--rust);
+  }
+  .philosophy .closer{
+    margin-top: 30px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    color: var(--rust);
+  }
+
+  /* book time */
+  .book{ text-align: left; }
+  .book ul{ margin: 18px 0 30px; padding-left: 20px; }
+  .book li{ margin-bottom: 6px; }
+  .btn{
+    display: inline-block;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.85rem;
+    text-decoration: none;
+    background: var(--rust);
+    color: var(--paper);
+    padding: 14px 24px;
+    border-radius: 2px;
+    transition: background .25s;
+  }
+  .btn:hover{ background: var(--ochre); }
+  .btn.ghost{
+    background: transparent;
+    color: var(--ink);
+    border: 1px solid var(--line-strong);
+    margin-left: 12px;
+  }
+  .btn.ghost:hover{ background: var(--rust); border-color: var(--rust); color: var(--paper); }
+  .email-line{
+    margin-top: 22px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 0.9rem;
+    color: var(--charcoal);
+  }
+
+  /* join */
+  .join{ background: #EAF9F7; border-top: 1px solid rgba(0,166,153,0.22); }
+
+  footer{
+    padding: 40px 0 60px;
+    border-top: 1px solid var(--line);
+  }
+  footer .wordmark{ margin-bottom: 6px; }
+  footer p{ color: var(--charcoal); font-size: 0.95rem; margin: 0; }
+
+  /* reveal on scroll */
+  .reveal{
+    opacity: 0;
+    transform: translateY(14px);
+    transition: opacity 0.7s ease, transform 0.7s ease;
+  }
+  .reveal.in{ opacity: 1; transform: translateY(0); }
+
+  @media (min-width: 640px){
+    .offer{ grid-template-columns: 220px 1fr; align-items: baseline; gap: 24px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    *{ transition: none !important; scroll-behavior: auto !important; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="nav">
+    <div class="wordmark">Founders First</div>
+    <a class="cta" href="#book">Book a conversation</a>
+  </div>
+</header>
+
+<main class="wrap">
+
+  <section class="hero">
+    <div class="eyebrow">Support for impact founders</div>
+    <h1>Building for impact is meaningful work<br>— <em>and you don't have to do it alone.</em></h1>
+    <p class="lede">Founders First is a network of practitioners from the impact sector who listen closely, speak honestly, and hold space for founders to think out loud — so the people building something meaningful have somewhere to turn.</p>
+  </section>
+
+  <section class="not-this reveal">
+    <div class="label">Let's be upfront</div>
+    <p>We are not an incubator or an accelerator.</p>
+    <p class="plain">There's no curriculum, no cohort to keep pace with, no pitch to polish. Just a room where you can say the true thing — the doubt, the question you haven't said out loud yet — to people who understand this work.</p>
+  </section>
+
+  <section class="reveal">
+    <h2>What we offer</h2>
+    <p class="section-intro">Whether you're navigating growth, fundraising, team challenges, burnout, strategy questions, or simply the weight of building something meaningful — this is a space to think honestly, without performance.</p>
+    <div class="offer-list">
+      <div class="offer">
+        <h3>Listening sessions</h3>
+        <p>One-on-one conversations where you can speak freely about challenges, dilemmas, and uncertainties — confidential, unhurried, and free of judgment.</p>
+      </div>
+      <div class="offer">
+        <h3>Perspective &amp; guidance</h3>
+        <p>Experience drawn from across the social impact ecosystem, offered to help you see a challenge from a few more angles and find a practical way through it.</p>
+      </div>
+      <div class="offer">
+        <h3>Peer community</h3>
+        <p>A growing circle of social entrepreneurs and ecosystem practitioners who support one another through honest conversation, shared learning, and solidarity.</p>
+      </div>
+      <div class="offer">
+        <h3>Founder wellbeing</h3>
+        <p>We believe strong impact starts with a supported founder. Reflection and sustainability aren't a side note here — they're the point.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>Who this is for</h2>
+    <p class="section-intro">Founders and leaders building, at any stage from early to scaling:</p>
+    <ul class="for-list">
+      <li>Social enterprises</li>
+      <li>Nonprofits</li>
+      <li>Community-led initiatives</li>
+      <li>Inclusive businesses</li>
+      <li>Mission-driven organizations</li>
+    </ul>
+  </section>
+
+</main>
+
+<section class="philosophy reveal">
+  <div class="wrap">
+    <h2>Our philosophy</h2>
+    <p class="section-intro">Too often, founders carry the emotional and strategic weight of impact work alone. We believe founders deserve:</p>
+    <ul>
+      <li>Spaces to be heard without judgment</li>
+      <li>Trusted peers and practitioners to think alongside them</li>
+      <li>Honest conversation over performative optimism</li>
+      <li>Support that values impact and wellbeing in equal measure</li>
+    </ul>
+    <div class="closer">Sustainable impact requires sustainable founders.</div>
+  </div>
+</section>
+
+<main class="wrap">
+
+  <section class="book reveal" id="book">
+    <h2>Book time with us</h2>
+    <p class="section-intro">If you'd like a conversation with the Founders First team, we'd love to hear from you.</p>
+    <a class="btn" href="#">Book a conversation</a>
+    <div class="email-line">or email hello@foundersfirst.org</div>
+  </section>
+
+</main>
+
+<section class="join reveal">
+  <div class="wrap">
+    <h2>Join the community</h2>
+    <p class="section-intro">We're building a thoughtful, trusted community of social impact founders and practitioners. To hear about future circles, gatherings, and conversations:</p>
+    <a class="btn" href="#">Join the community</a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="wordmark">Founders First</div>
+    <p>Perspective, support, and solidarity for social impact founders.</p>
+  </div>
+</footer>
+
+<script>
+  // scroll reveal
+  const revealEls = document.querySelectorAll('.reveal');
+  const io = new IntersectionObserver((entries)=>{
+    entries.forEach(e=>{
+      if(e.isIntersecting){ e.target.classList.add('in'); io.unobserve(e.target); }
+    });
+  }, { threshold: 0.12 });
+  revealEls.forEach(el=>io.observe(el));
+
+</script>
+
+</body>
+</html>
