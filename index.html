@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Founders First — Support for Social Impact Founders</title>
+<title>Founders First — Venture Support for Founders</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,450;0,9..144,600;1,9..144,450&family=IBM+Plex+Sans:wght@400;500&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -194,6 +194,50 @@
     color: var(--charcoal);
     max-width: 58ch;
   }
+  .offer p b{ color: var(--ink); font-weight: 600; }
+
+  /* how support is structured */
+  .structure-grid{
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0;
+    border-top: 1px solid var(--line);
+  }
+  .structure-col{
+    padding: 26px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .structure-col h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.15rem;
+    margin: 0 0 14px;
+  }
+  .structure-list{
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  .structure-list li{
+    position: relative;
+    padding: 10px 0 10px 22px;
+    color: var(--charcoal);
+    font-size: 0.98rem;
+    line-height: 1.5;
+    border-top: 1px solid var(--line);
+  }
+  .structure-list li:first-child{ border-top: none; }
+  .structure-list li::before{
+    content: "—";
+    position: absolute;
+    left: 0;
+    color: var(--rust);
+  }
+
+  @media (min-width: 640px){
+    .structure-grid{ grid-template-columns: 1fr 1fr; gap: 0 48px; }
+    .structure-col{ border-bottom: none; }
+  }
 
   /* who this is for */
   .for-list{
@@ -316,8 +360,8 @@
 <main class="wrap">
 
   <section class="hero">
-    <div class="eyebrow">Venture Support for Impact Founders</div>
-    <h1>Building for impact is hard work .. you don't have to do it alone.</h1>
+    <div class="eyebrow">Venture support for early-stage founders</div>
+    <h1>Building something meaningful is hard work .. you don't have to do it alone.</h1>
     <p class="lede">Founders First provides you a safe space to think out loud, paired with hands-on venture coaching to help you act. We work alongside entrepreneurs at every step — from the big strategic calls to the hard operational days — so you have both a place to be heard and real help getting things done.</p>
   </section>
 
@@ -329,37 +373,54 @@
 
   <section class="reveal">
     <h2>What we offer</h2>
-    <p class="section-intro">Whether you're navigating growth, fundraising, team challenges, burnout, or the weight of building something meaningful — this is hands-on support, at every step — a process that lets you show up authentically, without pretense.</p>
+    <p class="section-intro">Whether you're navigating growth, fundraising, team challenges, burnout, or the weight of building something meaningful — this is hands-on support, at every step, without pretence.</p>
     <div class="offer-list">
       <div class="offer">
         <h3>Venture coaching</h3>
-        <p>Hands-on coaching held inside a confidential, safe space — where you can speak freely about challenges, dilemmas, and uncertainties, free of judgment, with nothing to prove.</p>
+        <p>A safe, confidential space to think out loud with someone you trust, paired with a return to first principles — what's authentic and aligned with your own beliefs and values. It helps you show up as yourself and make clearer, more grounded decisions.</p>
       </div>
       <div class="offer">
-        <h3>Strategic support</h3>
-        <p>Hands-on help with the big decisions — fundraising, growth strategy, team structure, positioning — worked through with you, not just advised on from a distance.</p>
-      </div>
-      <div class="offer">
-        <h3>Operational support</h3>
-        <p>Real help getting through the hard days — hiring, cash crunches, difficult conversations — with experts who've been in the operational trenches themselves.</p>
+        <h3>Functional (CXO) support</h3>
+        <p>Hands-on help solving a specific problem in the business — finance, marketing, BD, fundraising, and more — from operational experts who've done the job before. It comes in two modes: <b>strategic</b>, working alongside you week to week through calls and workshops; and <b>operational</b>, a fractional CXO who steps in to lead the function directly where there isn't yet a dedicated team.</p>
       </div>
       <div class="offer">
         <h3>Peer community</h3>
-        <p>A growing circle of social entrepreneurs and ecosystem practitioners who support one another through honest conversation, shared learning, and solidarity.</p>
+        <p>A growing circle of entrepreneurs and ecosystem practitioners who support one another through honest conversation, shared learning, and solidarity.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="reveal">
+    <h2>How the support is structured</h2>
+    <p class="section-intro">Both offerings run on a steady cadence, so support doesn't stop at a single conversation.</p>
+    <div class="structure-grid">
+      <div class="structure-col">
+        <h3>Venture coaching</h3>
+        <ul class="structure-list">
+          <li>weekly 1:1 calls</li>
+          <li>regular self-assessments to track progress</li>
+          <li>ad-hoc check-ins for time-sensitive decisions</li>
+        </ul>
+      </div>
+      <div class="structure-col">
+        <h3>Functional (CXO) support</h3>
+        <ul class="structure-list">
+          <li>weekly calls or workshops with the founder or team</li>
+          <li>quarterly function review against goals</li>
+          <li>fractional CXO embedded for a set number of days each week</li>
+          <li>monthly progress review, with a plan to build internal capability over time</li>
+        </ul>
       </div>
     </div>
   </section>
 
   <section class="reveal">
     <h2>Who this is for</h2>
-    <p class="section-intro">Founders and leaders building, at any stage from early to scaling:</p>
+    <p class="section-intro">Founders and founding teams in the early stages of building meaningful ventures, each seeking to change the world in their own unique way.</p>
     <ul class="for-list">
-      <li>Startups in Impact Sectors</li>
-      <li>Social enterprises</li>
-      <li>Nonprofits</li>
-      <li>Community-led initiatives</li>
-      <li>Inclusive businesses</li>
-      <li>Mission-driven organizations</li>
+      <li>startups</li>
+      <li>mission-driven organisations</li>
+      <li>social enterprises</li>
     </ul>
   </section>
 
@@ -396,7 +457,7 @@
 <footer>
   <div class="wrap">
     <div class="wordmark">Founders First</div>
-    <p>Perspective, support, and solidarity for social impact founders.</p>
+    <p>Perspective, support, and solidarity for founders.</p>
   </div>
 </footer>
 
